@@ -19,22 +19,26 @@ Thread thread_producer(osPriorityHigh, 1024, nullptr, "Producer");
 
 void consumer(){
 
+    int counter = 0;
+
     printf("Initializing thread \"consumer\"\n");
 
     while (1)
     {
         thread_sleep_for(1000);
-        printf("CONSUMER\n");
+        printf("CONSUMER: %d\n", counter++);
     }
 }
 void producer(){
 
+    int counter = 0;
+    
     printf("Initializing thread \"producer\"\n");
 
     while (1)
     {
         thread_sleep_for(1000);
-        printf("PRODUCER\n");
+        printf("PRODUCER: %d\n", counter++);
     }
     
 }
